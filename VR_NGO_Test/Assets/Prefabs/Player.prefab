@@ -294,8 +294,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e43c9c1bbce654483c36f9720d4874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position:
-    m_InternalValue: {x: 0, y: 0, z: 0}
   isSpawned: 0
   movementSpeed: 5
   rotationSpeed: 500
