@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 1684391832873788225}
   - component: {fileID: -5334228754049469772}
   - component: {fileID: 8753742613354593715}
+  - component: {fileID: 3864556620278552211}
   m_Layer: 0
   m_Name: CameraRig
   m_TagString: Untagged
@@ -314,6 +315,22 @@ MonoBehaviour:
   syncInterval: 0
   ARCam: {fileID: 2539012858377723437}
   InteractionModeManager: {fileID: -5334228754049469772}
+--- !u!114 &3864556620278552211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2539012858611131336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 852dc08f0212a294db2be3b3f6ab7ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CameraOffset: {fileID: 2539012858611131336}
+  m_CameraObject: {fileID: 2539012858377723437}
+  m_TrackingOrigin: 2
+  m_CameraYOffset: 0
 --- !u!1 &6272897696728232510
 GameObject:
   m_ObjectHideFlags: 0
