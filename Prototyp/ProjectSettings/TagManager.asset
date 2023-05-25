@@ -3,12 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - EventCanvas
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - InputUI
   - Water
   - UI
   - 
