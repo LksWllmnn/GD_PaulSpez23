@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -13,15 +12,17 @@ public class WaterObjectsManager : MonoBehaviour
     [SerializeField][Range(0f, 10f)]private float _changeSpeedMin;
     [InspectorLabel("Changes the speed of the mobs how fast they appear and disapear (fastest)")]
     [SerializeField][Range(0f, 20f)]private float _changeSpeedMax;
+    [SerializeField] private int _numberOfLines;
+    private List<Line> _lines = new List<Line>();
+    public int AmountSpaces = 16;
+    
     [Header("Objects, which should be placed on the Water")]
-    [SerializeField]
-    private List<GameObject> _stones;
-    [SerializeField]
-    private List<GameObject> _goodMobs;
-    [SerializeField]
-    private List<GameObject> _badMobs;
+    [SerializeField] private List<GameObject> _stones;
+    [SerializeField] private List<GameObject> _goodMobs;
+    [SerializeField] private List<GameObject> _badMobs;
+    
 
-    private WaterObjectsManager()
+    private void Start()
     {
         _changeSpeedMin = 0.0f;
         _changeSpeedMax = 0.0f;
@@ -29,20 +30,16 @@ public class WaterObjectsManager : MonoBehaviour
         _stones = new List<GameObject>();
         _goodMobs = new List<GameObject>();
         _badMobs = new List<GameObject>();
-    }
 
-    public static WaterObjectsManager Instance
-    {
-        get
+        BoxCollider boxCollider = this.GetComponent<BoxCollider>();
+        Vector3 boxColPos = boxCollider.center + this.transform.position;
+        float lineWidth = boxCollider.size.x;
+        float lineHeight = boxCollider.size.z / _numberOfLines;
+
+
+        for (int i = 0; i < _numberOfLines; i++)
         {
-            lock (lockObject)
-            {
-                if (instance == null)
-                {
-                    instance = new WaterObjectsManager();
-                }
-                return instance;
-            }
+            _lines.Add(new Line(lineWidth, boxColPos.z - (boxCollider.size.z / 2) + lineHeight * i + lineHeight / 2, AmountSpaces, boxColPos.x));
         }
     }
 
@@ -80,10 +77,27 @@ public class WaterObjectsManager : MonoBehaviour
 
     public void PlaceNewMob()
     {
+        GameObject go = Instantiate(GetRandomMob());
     }
 
-    public void RemoveMob()
+    public GameObject GetRandomMob()
     {
+        float moodDecider = Mathf.Round(Random.value);
+        if (moodDecider == 0) 
+        {
+            float mobDecider = Mathf.Round(Random.Range(0, _badMobs.Count));
+            return _badMobs[(int)mobDecider];
+        } else
+        {
+            float mobDecider = Mathf.Round(Random.Range(0, _goodMobs.Count));
+            return _goodMobs[(int)mobDecider];
+        }
+    }
+
+    public void RemoveMob(Mob mob)
+    {
+        _lines[mob.Line].RemoveMob(mob);
+        Destroy(mob.gameObject);
     }
 
     public void PlaceStones()

@@ -7,6 +7,7 @@ public class Mob : MonoBehaviour
     private bool _onWater;
     private Animation _animation;
     private AudioClip _audio;
+    private int _line;
 
     public bool OnWater
     {
@@ -24,6 +25,12 @@ public class Mob : MonoBehaviour
     {
         get { return _audio; }
         set { _audio = value; }
+    }
+
+    public int Line
+    {
+        get { return _line; }
+        set { _line = value; }
     }
 
     public void PlayAnimation()
