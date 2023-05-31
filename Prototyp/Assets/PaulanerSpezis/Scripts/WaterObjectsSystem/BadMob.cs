@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class BadMob : Mob
 {
-    public override void Interact()
+
+    public override void Interact(bool interact)
     {
-        // Kill if stepped On
+        if (interact) _waiting = 0;
     }
 
 }

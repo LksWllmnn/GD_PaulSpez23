@@ -8,7 +8,10 @@ public class Mob : MonoBehaviour
     private Animation _animation;
     private AudioClip _audio;
     private int _line;
+    public int _waiting;
+    
 
+    #region GetterSetter
     public bool OnWater
     {
         get { return _onWater; }
@@ -32,6 +35,12 @@ public class Mob : MonoBehaviour
         get { return _line; }
         set { _line = value; }
     }
+    public int Waiting
+    {
+        get { return _waiting; }
+        set { _waiting = value; }
+    }
+    #endregion GetterSetter
 
     public void PlayAnimation()
     {
@@ -45,9 +54,14 @@ public class Mob : MonoBehaviour
     {
     }
 
-    public virtual void Interact()
+    public virtual void Interact(bool interact)
     {
 
+    }
+
+    public virtual void CountDown()
+    {
+        _waiting--;
     }
 
 }

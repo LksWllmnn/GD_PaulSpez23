@@ -60,7 +60,7 @@ public class Line
     {
         for (int i = 0; i < _spaces.Count; i++)
         {
-            if (i >= start && i <= end) _spaces[start] = UsedState.Free;
+            //if (i >= start && i <= end) _spaces[start] = UsedState.Free;
         }
     }
 
