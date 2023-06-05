@@ -12,7 +12,7 @@ public class WaterObjectsManager : MonoBehaviour
     [SerializeField][Range(0f, 20f)]private float _changeSpeedMax;
     [SerializeField] private int _numberOfLines;
     private List<Line> _lines = new List<Line>();
-    public int AmountSpaces = 16;
+    private int AmountSpaces = 16;
     
     [Header("Objects, which should be placed on the Water")]
     [SerializeField] private List<GameObject> _stones;
