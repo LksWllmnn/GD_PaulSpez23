@@ -7,6 +7,7 @@ public class Quality : MonoBehaviour
 {
     void Start()
     {
+        Interop.WVR_ShowPassthroughUnderlay(true);
         Interop.WVR_SetPassthroughImageQuality(WVR_PassthroughImageQuality.QualityMode);
     }
 }

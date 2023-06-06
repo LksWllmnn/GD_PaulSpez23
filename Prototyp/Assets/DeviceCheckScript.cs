@@ -1,22 +1,19 @@
-using Mirror;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cone : MonoBehaviour
+public class DeviceCheckScript : MonoBehaviour
 {
-    [SerializeField] NetworkManager networkManager;
+    // Start is called before the first frame update
+    [SerializeField]private GameObject _3DCanvas;
     void Start()
     {
-        networkManager.networkAddress = "192.168.178.25";
         if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
         {
-
-            networkManager.StartServer();
+            Debug.Log("HelloWindows");
         } else
         {
-            networkManager.StartClient();
+            _3DCanvas.SetActive(true);
         }
-            
     }
 }

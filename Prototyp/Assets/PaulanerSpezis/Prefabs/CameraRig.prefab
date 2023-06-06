@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2539012858377723427}
   - component: {fileID: 2539012858377723436}
   - component: {fileID: 2539012858377723424}
+  - component: {fileID: 3929988808162384240}
+  - component: {fileID: 6046910174242653330}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -44,7 +46,7 @@ Camera:
   m_GameObject: {fileID: 2539012858377723437}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -116,6 +118,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1954bc44c901b5f4288dbc637525b93d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3929988808162384240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2539012858377723437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 4225179855
+  serverOnly: 0
+  visible: 0
+  hasSpawned: 0
+--- !u!114 &6046910174242653330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2539012858377723437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83392ae5c1b731446909f252fd494ae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 0}
+  clientAuthority: 0
+  syncVelocity: 1
+  clearVelocity: 0
+  velocitySensitivity: 0.1
+  syncAngularVelocity: 1
+  clearAngularVelocity: 0
+  angularVelocitySensitivity: 0.1
 --- !u!1 &2539012858611131336
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,6 +173,7 @@ GameObject:
   - component: {fileID: -5334228754049469772}
   - component: {fileID: 8753742613354593715}
   - component: {fileID: 3864556620278552211}
+  - component: {fileID: 8721423862726523818}
   m_Layer: 0
   m_Name: CameraRig
   m_TagString: Untagged
@@ -331,6 +374,22 @@ MonoBehaviour:
   m_CameraObject: {fileID: 2539012858377723437}
   m_TrackingOrigin: 2
   m_CameraYOffset: 0
+--- !u!114 &8721423862726523818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2539012858611131336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ff6ff0b979ae714ca4cd1677fa4ca6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  cam: {fileID: 2539012858377723437}
 --- !u!1 &6272897696728232510
 GameObject:
   m_ObjectHideFlags: 0

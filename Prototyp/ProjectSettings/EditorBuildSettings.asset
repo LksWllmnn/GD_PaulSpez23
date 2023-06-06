@@ -8,12 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Samples/VIVE Wave XR Plugin - Essence/5.2.1-r.1/Essence/PassThrough/PassThrough.unity
     guid: 69abbfa26036f0442a5d3f24159e2b7c
-  - enabled: 1
+  - enabled: 0
     path: Assets/PaulanerSpezis/Scenes/PreScene.unity
     guid: 326974e83282a0b48b72ee8914465cef
-  - enabled: 1
+  - enabled: 0
     path: Assets/PaulanerSpezis/Scenes/TestSceneWithNick.unity
     guid: 8776abdb78895744799531735c3971ad
+  - enabled: 0
+    path: Assets/Samples/VIVE Wave XR Plugin - Essence/5.2.1-r.1/Essence/ButtonTest/ButtonTest.unity
+    guid: a3d72d03107354b42aac2da36ff8b585
+  - enabled: 1
+    path: Assets/PaulanerSpezis/Scenes/Prototype_Con.unity
+    guid: 4768c028c45982b4a97f06b5b0385d63
   m_configObjects:
     com.htc.upm.wave.xrsdk.xrsettings: {fileID: 11400000, guid: fd8f5ecb26d59524da1aca0c7a854a31, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 6d6f0dbf6d1cfde4a94a6b0da299dd1d, type: 2}

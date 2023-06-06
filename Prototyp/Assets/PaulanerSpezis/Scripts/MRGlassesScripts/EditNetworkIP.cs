@@ -9,14 +9,14 @@ using UnityEngine.UI;
 public class EditNetworkIP : MonoBehaviour
 {
     //[SerializeField] NetworkManager m_NetworkManager;
-    [SerializeField] TMP_InputField text;
+    //[SerializeField] TMP_InputField text;
 
     public void OnClickConnect()
     {
         //m_NetworkManager.networkAddress = text.text;
         //m_NetworkManager.OnClientConnect();
-
-        JoinAsServerOrClient.Instance.GiveValues(false, "192.168.8.1");
+        Debug.Log("Client!!!");
+        JoinAsServerOrClient.Instance.GiveValues(false, "192.168.178.25");
         SceneManager.LoadScene(1);
     }
 
@@ -25,8 +25,8 @@ public class EditNetworkIP : MonoBehaviour
 
         //m_NetworkManager.networkAddress = text.text;
         //m_NetworkManager.StartServer();
-
-        JoinAsServerOrClient.Instance.GiveValues(true, "192.168.8.1");
+        Debug.Log("Server!!!");
+        JoinAsServerOrClient.Instance.GiveValues(true, "192.168.178.25");
         SceneManager.LoadScene(1);
     }
 

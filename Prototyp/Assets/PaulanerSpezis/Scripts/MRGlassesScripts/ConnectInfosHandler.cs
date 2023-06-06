@@ -15,6 +15,7 @@ public class ConnectInfosHandler : MonoBehaviour
 
     public void GetInfos(string ip, bool isServer)
     {
+        Debug.Log("IP: " + ip + " | isServer: " +  isServer);
         networkManager.networkAddress = ip;
         if(isServer)
         {
