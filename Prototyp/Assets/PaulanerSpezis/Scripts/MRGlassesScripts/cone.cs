@@ -6,13 +6,15 @@ using UnityEngine;
 public class cone : MonoBehaviour
 {
     [SerializeField] NetworkManager networkManager;
+    [SerializeField] string _iP;
     void Start()
     {
-        networkManager.networkAddress = "192.168.178.25";
+        networkManager.networkAddress = _iP;
         if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
         {
 
-            networkManager.StartServer();
+            //networkManager.StartServer();
+            networkManager.StartClient();
         } else
         {
             networkManager.StartClient();
