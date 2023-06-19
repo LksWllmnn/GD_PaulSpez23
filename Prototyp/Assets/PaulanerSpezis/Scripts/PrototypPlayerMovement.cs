@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class PrototypPlayerMovement : MonoBehaviour
+public class PrototypPlayerMovement : NetworkBehaviour
 {
     public float rotationSpeed = 500;
     public float movementSpeed = 5;
@@ -14,6 +14,7 @@ public class PrototypPlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (!isLocalPlayer) return;
         // Bewegung entlang der horizontalen Achse
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
@@ -28,8 +29,9 @@ public class PrototypPlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!isLocalPlayer) return;
         Debug.Log(other.gameObject.name);
-        if (m_TextMeshProUGUI.enabled && other.gameObject.name == "peerEntry")
+        if (m_TextMeshProUGUI.enabled && other.gameObject.name == "bridge")
         {
             m_TextMeshProUGUI.gameObject.SetActive(false);
         }

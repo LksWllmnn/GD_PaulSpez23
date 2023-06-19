@@ -64,7 +64,7 @@ public class WaterObjectsManager : NetworkBehaviour
         float size = go.transform.localScale.x;
         float position = -(line.Width - (size / 2)) / 2 + (float)Random.value * (line.Width-(size/2));
         go.transform.position = new Vector3(position, 0, line.ZPos);
-        correctPosForClient(go, go.transform.position);
+        NetworkServer.Spawn(go);
         float waitingTime = (float)Random.Range(_changeSpeedMin, _changeSpeedMax);
 
         bool isPositionClear = true;
@@ -102,12 +102,6 @@ public class WaterObjectsManager : NetworkBehaviour
         }
     }
 
-    [ClientRpc]
-    public void correctPosForClient(GameObject go, Vector3 pos)
-    {
-        go.transform.position = pos;
-    }
-
     [Server]
     public GameObject GetRandomMob(Line line)
     {
@@ -116,13 +110,11 @@ public class WaterObjectsManager : NetworkBehaviour
         {
             float mobDecider = Mathf.Round(Random.Range(0, _badMobs.Count));
             GameObject go = Instantiate(_badMobs[(int)mobDecider], new Vector3(0, 0, line.ZPos), new Quaternion());
-            NetworkServer.Spawn(go);
             return go;
         } else
         {
             float mobDecider = Mathf.Round(Random.Range(0, _goodMobs.Count));
             GameObject go = Instantiate(_goodMobs[(int)mobDecider], new Vector3(0, 0, line.ZPos), new Quaternion());
-            NetworkServer.Spawn(go);
             return go;
         }
     }

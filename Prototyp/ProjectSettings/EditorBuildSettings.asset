@@ -17,10 +17,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Samples/VIVE Wave XR Plugin - Essence/5.3.0-r.26.1/Essence/ButtonTest/ButtonTest.unity
     guid: a3d72d03107354b42aac2da36ff8b585
-  - enabled: 0
+  - enabled: 1
     path: Assets/PaulanerSpezis/Scenes/Prototype_Con.unity
     guid: 4768c028c45982b4a97f06b5b0385d63
-  - enabled: 1
+  - enabled: 0
     path: Assets/Samples/VIVE Wave XR Plugin/5.2.1-r.1/XR/Controller/ControllerSample.unity
     guid: edb91e86bd8b7dc4ca40ad6c3167de73
   m_configObjects:

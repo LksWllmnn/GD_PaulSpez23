@@ -15,6 +15,7 @@ public class cone : MonoBehaviour
 
             //networkManager.StartServer();
             networkManager.StartClient();
+            //networkManager.StartHost();
         } else
         {
             networkManager.StartClient();
