@@ -31,7 +31,7 @@ public class PrototypPlayerMovement : NetworkBehaviour
     {
         if (!isLocalPlayer) return;
         Debug.Log(other.gameObject.name);
-        if (m_TextMeshProUGUI.enabled && other.gameObject.name == "bridge")
+        if (m_TextMeshProUGUI.enabled && other.gameObject.name == "bridge2")
         {
             m_TextMeshProUGUI.gameObject.SetActive(false);
         }

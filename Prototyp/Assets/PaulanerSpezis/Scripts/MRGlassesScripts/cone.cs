@@ -14,11 +14,12 @@ public class cone : MonoBehaviour
         {
 
             //networkManager.StartServer();
-            networkManager.StartClient();
-            //networkManager.StartHost();
+            //networkManager.StartClient();
+            networkManager.StartHost();
         } else
         {
-            networkManager.StartClient();
+            //networkManager.StartClient();
+            networkManager.StartHost();
         }
             
     }
