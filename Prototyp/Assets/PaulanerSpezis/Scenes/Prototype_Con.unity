@@ -868,8 +868,8 @@ MonoBehaviour:
   - {fileID: 8454210837282114330, guid: 4d70c0313d19bb347946da02b25c6900, type: 3}
   - {fileID: 7767239847300795431, guid: 0b7b4147e94864f46a177474fd169b2a, type: 3}
   _badMobs:
-  - {fileID: 3887113230230360286, guid: 485d3aab1924c0e49b61d7a404e34b82, type: 3}
-  - {fileID: 2928753236654040158, guid: f433d664188d9f242b827518ad7abb9f, type: 3}
+  - {fileID: 5044964352790049164, guid: fb649d9227b81c4478497293aaae1f7c, type: 3}
+  - {fileID: 8012508436613387956, guid: 7598504ac75aa314d8f6aaec87bfcac9, type: 3}
 --- !u!65 &893830250
 BoxCollider:
   m_ObjectHideFlags: 0
