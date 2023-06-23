@@ -865,8 +865,8 @@ MonoBehaviour:
   _stones:
   - {fileID: 2274597064033897809, guid: 161718140aaba4f45a3ffda9ea0bbaf8, type: 3}
   _goodMobs:
-  - {fileID: 5931333400754869692, guid: e6ef590b3ac2bf84498efc83582b4743, type: 3}
-  - {fileID: 414901277865747339, guid: a6179426f7af17f439bd1bcbdd38b098, type: 3}
+  - {fileID: 8454210837282114330, guid: 4d70c0313d19bb347946da02b25c6900, type: 3}
+  - {fileID: 7767239847300795431, guid: 0b7b4147e94864f46a177474fd169b2a, type: 3}
   _badMobs:
   - {fileID: 3887113230230360286, guid: 485d3aab1924c0e49b61d7a404e34b82, type: 3}
   - {fileID: 2928753236654040158, guid: f433d664188d9f242b827518ad7abb9f, type: 3}
@@ -1960,7 +1960,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2017257888}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &2017257890
 Camera:
   m_ObjectHideFlags: 0
