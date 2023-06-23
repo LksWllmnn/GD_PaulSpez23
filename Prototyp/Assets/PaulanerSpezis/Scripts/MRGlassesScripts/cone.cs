@@ -13,11 +13,13 @@ public class cone : MonoBehaviour
         if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
         {
 
-            networkManager.StartServer();
+            //networkManager.StartServer();
             //networkManager.StartClient();
+            networkManager.StartHost();
         } else
         {
-            networkManager.StartClient();
+            //networkManager.StartClient();
+            networkManager.StartHost();
         }
             
     }

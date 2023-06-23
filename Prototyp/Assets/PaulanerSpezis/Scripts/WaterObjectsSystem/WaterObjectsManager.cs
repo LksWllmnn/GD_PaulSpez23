@@ -1,10 +1,12 @@
+using Mirror;
+using Mirror.Examples.Tanks;
 using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class WaterObjectsManager : MonoBehaviour
+public class WaterObjectsManager : NetworkBehaviour
 { 
     [InspectorLabel("Changes the speed of the mobs how fast they appear and disapear (slowest)")]
     [SerializeField][Range(0f, 10f)]private float _changeSpeedMin;
@@ -42,7 +44,8 @@ public class WaterObjectsManager : MonoBehaviour
 
     private void Update()
     {
-        
+
+        if (!isServer) return;
         if (lastTime<(int)Time.timeSinceLevelLoad)
         {
             for(int i = 0; i < _lines.Count; i++)
@@ -53,6 +56,7 @@ public class WaterObjectsManager : MonoBehaviour
         }
     }
 
+    [Server]
     public void UpdateLine(Line line)
     {
 
@@ -60,6 +64,7 @@ public class WaterObjectsManager : MonoBehaviour
         float size = go.transform.localScale.x;
         float position = -(line.Width - (size / 2)) / 2 + (float)Random.value * (line.Width-(size/2));
         go.transform.position = new Vector3(position, 0, line.ZPos);
+        NetworkServer.Spawn(go);
         float waitingTime = (float)Random.Range(_changeSpeedMin, _changeSpeedMax);
 
         bool isPositionClear = true;
@@ -79,6 +84,7 @@ public class WaterObjectsManager : MonoBehaviour
         } else
         {
             Destroy(go);
+            NetworkServer.Destroy(go);
         }
         
 
@@ -96,6 +102,7 @@ public class WaterObjectsManager : MonoBehaviour
         }
     }
 
+    [Server]
     public GameObject GetRandomMob(Line line)
     {
         float moodDecider = Mathf.Round(Random.value);
@@ -112,11 +119,13 @@ public class WaterObjectsManager : MonoBehaviour
         }
     }
 
+    [Server]
     public void RemoveMob(Mob mob)
     {
         
         _lines[mob.Line].RemoveMob(mob);
         Destroy(mob.gameObject);
+        NetworkServer.Destroy(mob.gameObject);
     }
 
     public void PlaceStones()
