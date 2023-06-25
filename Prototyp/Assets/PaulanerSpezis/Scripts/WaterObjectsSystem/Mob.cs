@@ -9,9 +9,21 @@ public class Mob : MonoBehaviour
     private AudioClip _audio;
     private int _line;
     public int _waiting;
+
+    public float duration = 1f; // Duration of the movement in seconds
+
+    private float elapsedTime = 0f;
+    private Vector3 initialPosition;
+    private Vector3 targetPosition;
+    public bool isMoving = false;
     
 
     #region GetterSetter
+    private void Start()
+    {
+        initialPosition = transform.position;
+        targetPosition = new Vector3(initialPosition.x, -0.3f, initialPosition.z);
+    }
     public bool OnWater
     {
         get { return _onWater; }
@@ -48,12 +60,33 @@ public class Mob : MonoBehaviour
 
     public void DiveDown()
     {
-    }
+        isMoving = true;
+        elapsedTime = 0f;
+        initialPosition = transform.position;
+        targetPosition = new Vector3(initialPosition.x, -0.3f, initialPosition.z);
+        }
 
     public void DiveUp()
     {
+        isMoving = true;
+        elapsedTime = 0f;
+        initialPosition = transform.position;
+        targetPosition = new Vector3(initialPosition.x, 0, initialPosition.z);
     }
-
+private void Update()
+    {
+        if (isMoving)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsedTime / duration);
+            Vector3 newPosition = Vector3.Lerp(initialPosition, targetPosition, t);
+            transform.position = newPosition;
+            if (t >= 1f)
+            {
+                isMoving = false;
+            }
+        }
+    }
     public virtual void Interact(bool interact)
     {
 

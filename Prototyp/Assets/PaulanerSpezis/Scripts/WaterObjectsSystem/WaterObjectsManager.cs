@@ -24,8 +24,9 @@ public class WaterObjectsManager : NetworkBehaviour
     private float lineLength;
     private float minGapSize;
     private float currentTime;
-
     private int lastTime = 0;
+
+    private int i_counter =0;
 
 
     private void Start()
@@ -63,7 +64,8 @@ public class WaterObjectsManager : NetworkBehaviour
         GameObject go = GetRandomMob(line);
         float size = go.transform.localScale.x;
         float position = -(line.Width - (size / 2)) / 2 + (float)Random.value * (line.Width-(size/2));
-        go.transform.position = new Vector3(position, 0, line.ZPos);
+        //go.transform.position = new Vector3(position, 0, line.ZPos);
+        go.transform.position = new Vector3(position, -0.3f, line.ZPos);
         NetworkServer.Spawn(go);
         float waitingTime = (float)Random.Range(_changeSpeedMin, _changeSpeedMax);
 
@@ -91,13 +93,14 @@ public class WaterObjectsManager : NetworkBehaviour
         for (int i = 0; i <= 0; i++)
         {
             line.Objects[i].CountDown();
-
+            line.Objects[i].DiveUp();
             if (line.Objects[i].Waiting <= 0)
             {
                 line.Objects[i].DiveDown();
-                
-                Destroy(line.Objects[i].gameObject);
-                line.Objects.RemoveAt(i);
+                //Wait for Animals to dive
+                StartCoroutine(ContinueAfterDelay(line, i));
+            /*    Destroy(line.Objects[i].gameObject);
+                line.Objects.RemoveAt(i);*/
             }
         }
     }
@@ -126,6 +129,16 @@ public class WaterObjectsManager : NetworkBehaviour
         _lines[mob.Line].RemoveMob(mob);
         Destroy(mob.gameObject);
         NetworkServer.Destroy(mob.gameObject);
+    }
+
+    private System.Collections.IEnumerator ContinueAfterDelay(Line line,  int i)
+    {
+    //    Debug.Log("Before waiting...");
+
+        yield return new WaitForSeconds(1f);
+        Destroy(line.Objects[i].gameObject);
+                line.Objects.RemoveAt(i);
+ //       Debug.Log("After waiting. Continued!");
     }
 
     public void PlaceStones()
