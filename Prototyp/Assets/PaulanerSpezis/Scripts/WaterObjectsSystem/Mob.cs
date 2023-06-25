@@ -22,7 +22,7 @@ public class Mob : MonoBehaviour
     private void Start()
     {
         initialPosition = transform.position;
-        targetPosition = new Vector3(initialPosition.x, -0.3f, initialPosition.z);
+        targetPosition = new Vector3(initialPosition.x, initialPosition.y, initialPosition.z);
     }
     public bool OnWater
     {
