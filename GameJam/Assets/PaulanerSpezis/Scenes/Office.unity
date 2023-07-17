@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &30509278 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3127728407087826080, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+  m_PrefabInstance: {fileID: 1606768749}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e4e6cca11330d4088d729ab4fc9d9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &53228583
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7465bd293590a4a46ac705362df41288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Door: {fileID: 1240144245}
+  m_Riddle: {fileID: 1852123657}
 --- !u!1 &364442885
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,7 +966,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 9f5a24a380916d14db9775daab4fe333, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f5a24a380916d14db9775daab4fe333, type: 3}
@@ -1153,7 +1164,6 @@ GameObject:
   - component: {fileID: 1462151732}
   - component: {fileID: 1462151731}
   - component: {fileID: 1462151730}
-  - component: {fileID: 1462151728}
   - component: {fileID: 1462151733}
   m_Layer: 0
   m_Name: NextRoom
@@ -1177,19 +1187,6 @@ Transform:
   m_Father: {fileID: 1390644447}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1462151728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1462151726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ef8655c8de0e6a46984939f634ca8d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NextRoom: RestRoom
 --- !u!65 &1462151730
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1265,7 +1262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 515716326}
+  m_InteractionManager: {fileID: 30509278}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -1295,12 +1292,9 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1462151728}
-        m_TargetAssemblyTypeName: LoadNextRoom, Assembly-CSharp
+      - m_Target: {fileID: 1852123658}
+        m_TargetAssemblyTypeName: Room, Assembly-CSharp
         m_MethodName: LoadNext
         m_Mode: 1
         m_Arguments:
@@ -1311,6 +1305,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
   m_Activated:
     m_PersistentCalls:
       m_Calls: []
@@ -1447,6 +1444,66 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+--- !u!1 &1852123656
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1852123659}
+  - component: {fileID: 1852123658}
+  - component: {fileID: 1852123657}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1852123657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852123656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af56ac42a03722f459ebb1c1eb53fad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1852123658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852123656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb09f1fe0a1494949a3093831c2e8b27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Riddle: {fileID: 1852123657}
+  m_Door: {fileID: 1240144245}
+  m_NextRoom: RestRoom
+--- !u!4 &1852123659
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852123656}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.1071523, y: 0.98627925, z: -0.045020647}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1994329249
 GameObject:
   m_ObjectHideFlags: 0
