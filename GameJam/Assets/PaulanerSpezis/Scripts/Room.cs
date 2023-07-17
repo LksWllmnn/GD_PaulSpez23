@@ -10,6 +10,7 @@ public class Room : MonoBehaviour
     private void Start()
     {
         m_Riddle.CS += OpenDoor;
+        m_Door.cO += LoadNext;
     }
 
     void OpenDoor()

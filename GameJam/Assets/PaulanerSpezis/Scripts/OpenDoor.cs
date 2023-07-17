@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public delegate void CallOpened();
+
 public class OpenDoor : MonoBehaviour
 {
     [SerializeField]GameObject DoorPivot;
-    [SerializeField] GameObject NextRoom;
+    //[SerializeField] GameObject NextRoom;
     bool rotateDoor = false;
     bool isOpen = false;
     private float timerDuration = 2f;
     private bool timerRunning = false;
+    public event CallOpened cO;
 
     public void Open()
     {
@@ -18,15 +21,14 @@ public class OpenDoor : MonoBehaviour
         {
             StartCoroutine(TimerCoroutine());
         }
-        Debug.Log("Clicked");
     }
 
     public void StopOpen()
     {
         rotateDoor = false;
         isOpen = true;
-        Debug.Log("Door Stop");
-        NextRoom.SetActive(true);
+        cO();
+        //NextRoom.SetActive(true);
 
     }
 

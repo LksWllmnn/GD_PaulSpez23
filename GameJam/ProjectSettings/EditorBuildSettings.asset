@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/PaulanerSpezis/Scenes/RestRoom.unity
     guid: 031c7d955e2f3244eb32e0976fc34b0d
+  - enabled: 1
+    path: Assets/PaulanerSpezis/Scenes/Lift.unity
+    guid: 023055eb9dc49a54fb0a29e96e18d748
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 11ed467ee66463045b9769952b3089f4, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: d8c5283eed55a914581d8607e5f2686e, type: 2}
