@@ -45,6 +45,7 @@ public class LiftNumbers : Riddle
     {
         m_TextMeshPro.text = "0000"; 
         m_Numbers.Clear();
+        pos = 0;
     }
 
     public void CheckNumbers()

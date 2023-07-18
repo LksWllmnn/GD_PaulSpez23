@@ -16,14 +16,14 @@ public class LiftButton : MonoBehaviour
 
     public void AddNumber()
     {
-        transform.Translate(new Vector3(0, -0.05f, 0));
+        transform.Translate(new Vector3(0, 0.05f, 0));
         m_LiftNumbers.AddNumber(m_Number);
         m_Renderer.material = m_PressedMaterial;
     }
 
     public void ReleaseButton()
     {
-        transform.Translate(new Vector3(0, 0.05f, 0));
+        transform.Translate(new Vector3(0, -0.05f, 0));
         m_Renderer.material = m_Material;
     }
 
