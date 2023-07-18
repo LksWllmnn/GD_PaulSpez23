@@ -1914,7 +1914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa21940a3c4a285488bf72d766222446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CorrectNumbers: 02000000030000000400000005000000
+  m_CorrectNumbers: 03000000020000000300000004000000
   m_TextMeshPro: {fileID: 1386020420}
   m_LiftNumbers:
   - {fileID: 411433757}
@@ -3616,6 +3616,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2140833953817275108, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_RootOrder
       value: 1
