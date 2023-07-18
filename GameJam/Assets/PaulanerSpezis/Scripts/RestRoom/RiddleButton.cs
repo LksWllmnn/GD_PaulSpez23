@@ -18,12 +18,19 @@ public class RiddleButton : MonoBehaviour
     {
         this.transform.Translate(new Vector3(0, -0.005f, 0));
         _Renderer.material = _PushedMat;
-        _rotateRiddle.ActivateRotation((int)_Direction);
+        if(_rotateRiddle)
+        {
+            _rotateRiddle.ActivateRotation((int)_Direction);
+        }
+        
     }
     public void ReleasedButton()
     {
         this.transform.Translate(new Vector3(0, 0.005f, 0));
         _Renderer.material = _NormMat;
-        _rotateRiddle.DeactivateRotation((int)_Direction);
+        if (_rotateRiddle)
+        {
+            _rotateRiddle.DeactivateRotation((int)_Direction);
+        }
     }
 }
