@@ -5,6 +5,7 @@ public class DispenserButton : MonoBehaviour
 {
     [SerializeField] GameObject IceCube;
     Renderer m_Renderer;
+    [SerializeField] WaterPlant m_Riddle;
     [SerializeField] Material m_Material;
     [SerializeField] Material m_HoverMaterial;
     [SerializeField] Material m_PressedMaterial;
@@ -56,6 +57,7 @@ public class DispenserButton : MonoBehaviour
         for (int i = 0; i < iterations; i++)
         {
             GameObject go = Instantiate(IceCube, m_Release.position, m_Release.rotation);
+            go.GetComponent<IceCube>().Riddle = m_Riddle;
             yield return new WaitForSeconds(interval);
         }
         intervalRunning = false;
