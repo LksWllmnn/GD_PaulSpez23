@@ -5,18 +5,21 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/PaulanerSpezis/Scenes/Office.unity
     guid: bc3056f6a0bd3964a9f7fb52a0ebd09f
-  - enabled: 1
+  - enabled: 0
     path: Assets/PaulanerSpezis/Scenes/RestRoom.unity
     guid: 031c7d955e2f3244eb32e0976fc34b0d
-  - enabled: 1
+  - enabled: 0
     path: Assets/PaulanerSpezis/Scenes/Lift.unity
     guid: 023055eb9dc49a54fb0a29e96e18d748
-  - enabled: 1
+  - enabled: 0
     path: Assets/PaulanerSpezis/Scenes/Lobby.unity
     guid: 7761ae42ec95c354ab55fd3916203cf0
+  - enabled: 1
+    path: Assets/PaulanerSpezis/Scenes/TestSzene.unity
+    guid: 9e33395f1d9308e45a22c2bd2d2a44c0
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 11ed467ee66463045b9769952b3089f4, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: d8c5283eed55a914581d8607e5f2686e, type: 2}
