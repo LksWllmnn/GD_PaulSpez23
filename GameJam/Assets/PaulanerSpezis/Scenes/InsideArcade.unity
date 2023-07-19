@@ -1982,6 +1982,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 791630362831728494, guid: 81e6257aff5f9d64b8f045774c12ad79, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 791630361225506160, guid: 81e6257aff5f9d64b8f045774c12ad79, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 81e6257aff5f9d64b8f045774c12ad79, type: 3}
@@ -2197,6 +2201,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &453296564
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453296554}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0.00000023841858, y: 0, z: 0}
 --- !u!1 &457144063
 GameObject:
   m_ObjectHideFlags: 0
@@ -5108,6 +5125,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2218156087453720979, guid: cb6e704e28f6a0042bfe137fd7aa2d36, type: 3}
+      propertyPath: m_FOVAxisMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2494381215553539873, guid: cb6e704e28f6a0042bfe137fd7aa2d36, type: 3}
       propertyPath: m_ClearFlags
       value: 2
@@ -6918,7 +6939,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146208267}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &2146208269
 Camera:
   m_ObjectHideFlags: 0

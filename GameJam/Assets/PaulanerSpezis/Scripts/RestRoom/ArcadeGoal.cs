@@ -8,6 +8,8 @@ public class ArcadeGoal : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+
+        Debug.Log("hi there");
         if(other.name == "Ball")
         {
             m_Riddle.Solved();

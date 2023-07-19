@@ -6,6 +6,6 @@ public class ArcadeGameDoorOut : OpenDoor
 {
     protected override void OpenDoorAction()
     {
-        Debug.Log("Do sth");
+        //Debug.Log("Do sth");
     }
 }

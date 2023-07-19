@@ -20,6 +20,7 @@ public class Room : MonoBehaviour
 
     public void LoadNext()
     {
+        Debug.Log("Load next");
         if(m_NextRoom != "done")
         {
             SceneManager.LoadScene(m_NextRoom);
