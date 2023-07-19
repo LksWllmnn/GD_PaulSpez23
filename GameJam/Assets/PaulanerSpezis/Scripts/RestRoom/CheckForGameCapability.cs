@@ -1,17 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class CheckForGameCapability : MonoBehaviour
+public class CheckForGameCapability : Riddle
 {
     [SerializeField] StoryGimics m_StroyGimics;
     [SerializeField] GameObject CubeRiddle;
     [SerializeField] TextMeshPro m_ScreenText;
+    string _lastEntered;
+    string _progress;
     bool _isSolved = false;
     bool _pizza = false;
     bool _energy = false;
     bool _radish = false;
+
+    public override event CallSolved CS;
+
+    public override void Solved()
+    {
+        CS();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -35,6 +42,7 @@ public class CheckForGameCapability : MonoBehaviour
             {
                 CubeRiddle.SetActive(true);
                 m_ScreenText.text = "Uh, nice one!";
+                Solved();
             } else if (!_energy || !_pizza)
             {
                 m_ScreenText.text = "sth is missing!";
@@ -43,40 +51,8 @@ public class CheckForGameCapability : MonoBehaviour
             {
                 m_ScreenText.text = "take...it...out!";
             }
-
-            /*if (other.name == "XR Origin")
-            {
-                if (m_StroyGimics.GrabbedEnergy && m_StroyGimics.GrabbedPizza)
-                {
-                    CubeRiddle.SetActive(true);
-                    m_ScreenText.text = "Uh, nice one!";
-                }
-                else if (m_StroyGimics.GrabbedRadish)
-                {
-                    m_ScreenText.text = "ugh.. Radish!! Fuck of you chicken shit!!";
-                }
-                else if (!m_StroyGimics.GrabbedRadish&& !m_StroyGimics.GrabbedEnergy&& !m_StroyGimics.GrabbedPizza)
-                {
-                    m_ScreenText.text = "Hi...Bring me sth that proofs you are a true Gamer dude!";
-                } else
-                {
-                    m_ScreenText.text = "Nice try, but not quiet there yet...";
-                }
-            }
-            else if (other.name == "Pizza_Slice")
-            {
-                m_ScreenText.text = "What is that? ...Hmm Pizza";
-            }
-            else if (other.name == "MofsterEnergy")
-            {
-                m_ScreenText.text = "What is that? ...Hmm Energy...nice";
-            }
-            else if (other.name == "Radish")
-            {
-                m_ScreenText.text = "ugh...Radish";
-            }*/
+            m_ScreenText.text = _lastEntered + "" + _progress;
         }
-        
     }
 
     private void OnTriggerExit(Collider other)

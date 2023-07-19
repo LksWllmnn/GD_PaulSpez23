@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 public delegate void CallOpened();
 
 public class OpenDoor : MonoBehaviour
 {
-    [SerializeField]GameObject DoorPivot;
+    [SerializeField] GameObject ?DoorPivot;
     //[SerializeField] GameObject NextRoom;
     bool rotateDoor = false;
     bool isOpen = false;
@@ -29,14 +30,18 @@ public class OpenDoor : MonoBehaviour
         isOpen = true;
         cO();
         //NextRoom.SetActive(true);
-
     }
 
 
 
     private void Update()
     {
-        if (rotateDoor && !isOpen) 
+        OpenDoorAction();
+    }
+
+    protected virtual void OpenDoorAction()
+    {
+        if (rotateDoor && !isOpen)
         {
             DoorPivot.transform.Rotate(new Vector3(0, -90f * Time.deltaTime, 0), Space.World);
         }
