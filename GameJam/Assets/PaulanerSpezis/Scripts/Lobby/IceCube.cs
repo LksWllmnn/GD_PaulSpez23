@@ -14,7 +14,7 @@ public class IceCube : MonoBehaviour
         {
 
             Debug.Log("Not Destroy");
-            if (other.name == "PlantEarth")
+            if (other.name == "plantcollider")
             {
                 other.gameObject.GetComponent<Plant>().AddHit();
                 Destroy(this);
@@ -43,6 +43,14 @@ public class IceCube : MonoBehaviour
             case "BucketWall (7)": return true;
             case "BucketWall (8)": return true;
             case "BucketWall (9)": return true;
+            case "waterDispencer":
+                return true;
+            case "CupHandle":
+                return true;
+            case "plantcollider":
+                return true; 
+            case "GamJamLobbyCup1":
+                return true;
             default: return false;
         }
     }

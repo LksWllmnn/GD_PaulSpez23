@@ -30,14 +30,14 @@ public class DispenserButton : MonoBehaviour
 
     public void ClickButton()
     {
-        transform.Translate(new Vector3(0, -0.05f, 0));
+        transform.Translate(new Vector3(0, 0, -0.05f));
         m_Renderer.material = m_PressedMaterial;
         StartInterval();
     }
     
     public void ReleaseButton()
     {
-        transform.Translate(new Vector3(0, 0.05f, 0));
+        transform.Translate(new Vector3(0, 0, 0.05f));
         m_Renderer.material = m_Material;
     }
 
