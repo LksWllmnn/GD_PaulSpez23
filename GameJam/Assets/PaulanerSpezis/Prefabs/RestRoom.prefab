@@ -1396,6 +1396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5465169089963741781}
   - component: {fileID: 1199224296538486337}
+  - component: {fileID: 2273555442812844426}
   m_Layer: 0
   m_Name: Light
   m_TagString: Untagged
@@ -1480,6 +1481,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &2273555442812844426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3842670239530830614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &4527159368234903738
 GameObject:
   m_ObjectHideFlags: 0
@@ -2987,6 +3008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8722390245480624342}
   - component: {fileID: 8722390245480624343}
+  - component: {fileID: 7167825330702302916}
   m_Layer: 0
   m_Name: Light (1)
   m_TagString: Untagged
@@ -3071,6 +3093,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &7167825330702302916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8722390245480624329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &8722390245514463080
 GameObject:
   m_ObjectHideFlags: 0
@@ -3715,9 +3757,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8722390246717688173}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.11, y: 0.44, z: 2.27}
-  m_LocalScale: {x: 0.90878034, y: 1.0424247, z: 2.1917646}
+  m_LocalRotation: {x: -0.7071069, y: -0, z: -0, w: 0.70710665}
+  m_LocalPosition: {x: 0.7559765, y: 0.60752773, z: -1.4111016}
+  m_LocalScale: {x: 0.12975994, y: 0.14884233, z: 0.3129505}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7575744168577731776}

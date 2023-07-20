@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2023-07-20T08:54:01.102Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.82" etag="hKZgSQ8_wHGELWOcxxzs" version="21.6.3" type="device">
+<mxfile host="www.draw.io" modified="2023-07-20T13:42:11.560Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.82" etag="vlke5sukoUQFyk3Qx_Xf" version="21.6.3" type="device">
   <diagram name="Seite-1" id="9ygnykhMfCcqP1jk7yM6">
     <mxGraphModel dx="2548" dy="1583" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -374,6 +374,12 @@
         </mxCell>
         <mxCell id="ijIcHKHU3NVc7bm5MXtS-28" value="# override void OpenDoorAction()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="ijIcHKHU3NVc7bm5MXtS-26">
           <mxGeometry y="34" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="ijIcHKHU3NVc7bm5MXtS-35" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=10;strokeColor=#FF9999;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="410" as="sourcePoint" />
+            <mxPoint x="240" y="520" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
