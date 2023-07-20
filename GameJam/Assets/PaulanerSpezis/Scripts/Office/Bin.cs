@@ -16,7 +16,7 @@ public class Bin : MonoBehaviour
 
     private void Start()
     {
-        m_TextMeshPro.text = "" + m_Filth.Count;
+        m_TextMeshPro.text = "" + (m_Filth.Count - 2);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -46,7 +46,7 @@ public class Bin : MonoBehaviour
                 break;
             }
         }
-        m_TextMeshPro.text = "" + m_Filth.Count;
-        if(m_Filth.Count <= 0) m_Riddle.Solved();
+        m_TextMeshPro.text = "" + (m_Filth.Count-2);
+        if(m_Filth.Count <= 2) m_Riddle.Solved();
     }
 }
