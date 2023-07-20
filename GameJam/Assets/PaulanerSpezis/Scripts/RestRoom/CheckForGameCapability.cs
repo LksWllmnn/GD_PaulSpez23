@@ -19,15 +19,21 @@ public class CheckForGameCapability : Riddle
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.name);
         if(!_isSolved)
         {
             if(CheckIfCorrect(other.name))
             {
                 m_ScreenText.text = "1/2";
+                if(other.name == "Pizza_Slice") _pizza=true;
+                if (other.name == "MofsterEnergy") _energy = true;
                 //play Audio
             }
 
             if(other.name == "Radish")
+            {
+                Debug.Log("ugh, radish!");
+            }
 
             if(_energy && _pizza && !_radish)
             {
