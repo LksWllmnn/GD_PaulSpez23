@@ -33,7 +33,6 @@ public class XRRotateRiddle : MonoBehaviour
             Vector3 _difference = _interActorTransform.position - transform.position;
             if (Mathf.Abs(_difference.x) < Mathf.Abs(_difference.z) && _difference.z > 0) // north
             {
-                Debug.Log("North");
                 transform.Rotate(new Vector3(
                     (oldPosition.y - _interActorTransform.localPosition.y) * 30000 * Time.deltaTime, //vertical
                     -(oldPosition.x - _interActorTransform.localPosition.x) * 30000 * Time.deltaTime, 0),//horizontal 
@@ -45,7 +44,6 @@ public class XRRotateRiddle : MonoBehaviour
                     0, 
                     (oldPosition.z - _interActorTransform.localPosition.z) * 30000 * Time.deltaTime, //horizontal
                     -(oldPosition.y - _interActorTransform.localPosition.y) * 30000 * Time.deltaTime), Space.World); //vertical
-                Debug.Log("East");
             }
             else if (Mathf.Abs(_difference.x) < Mathf.Abs(_difference.z) && _difference.z < 0) // south
             {
@@ -53,7 +51,6 @@ public class XRRotateRiddle : MonoBehaviour
                     -(oldPosition.y - _interActorTransform.localPosition.y) * 30000 * Time.deltaTime, //vertical
                     (oldPosition.x - _interActorTransform.localPosition.x) * 30000 * Time.deltaTime, //horizontal
                     0), Space.World);
-                Debug.Log("South");
             }
             else if (Mathf.Abs(_difference.x) > Mathf.Abs(_difference.z) && _difference.x < 0) // west
             {
@@ -61,10 +58,8 @@ public class XRRotateRiddle : MonoBehaviour
                     0, 
                     -(oldPosition.z - _interActorTransform.localPosition.z) * 30000 * Time.deltaTime, //horizontal
                     (oldPosition.y - _interActorTransform.localPosition.y) * 30000 * Time.deltaTime), Space.World); //vertical
-                Debug.Log("West");
             }
             oldPosition = _interActorTransform.localPosition;
-            Debug.Log(_difference.x);
 
         }
     }
