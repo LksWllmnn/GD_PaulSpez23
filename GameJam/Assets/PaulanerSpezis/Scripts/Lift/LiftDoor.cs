@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class LiftDoor : OpenDoor
 {
+    [SerializeField]GameObject m_LeftWing;
+    [SerializeField]GameObject m_RightWing;
     protected override void OpenDoorAction()
     {
-        Debug.Log("Sth happens here");
+        m_LeftWing.transform.Translate(new Vector3(0, 0, 0.5f * Time.deltaTime), Space.World);
+        m_RightWing.transform.Translate(new Vector3(0, 0, -0.5f * Time.deltaTime), Space.World);
     }
 }
