@@ -2155,6 +2155,10 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 3127728406664446689}
+    - target: {fileID: 2709504857297490644, guid: fd12c01e45990cd48b076e3cdf517347, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2709504857297490655, guid: fd12c01e45990cd48b076e3cdf517347, type: 3}
       propertyPath: m_Name
       value: CupHandle
