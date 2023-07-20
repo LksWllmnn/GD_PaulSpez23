@@ -230,7 +230,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cefb2efcdc39144884f056169b545f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DoorPivot: {fileID: 110854193}
 --- !u!1001 &306326730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -336,7 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Riddle: {fileID: 435056540}
-  m_Door: {fileID: 110854195}
+  m_Door: {fileID: 0}
   m_NextRoom: done
 --- !u!4 &435056542
 Transform:
@@ -3114,8 +3113,8 @@ Transform:
   - {fileID: 110854194}
   - {fileID: 1777740265}
   - {fileID: 839735539370869643}
-  - {fileID: 1118536136}
   - {fileID: 6685206867565028514}
+  - {fileID: 1118536136}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3213,7 +3212,7 @@ Transform:
   - {fileID: 554753085415715856}
   - {fileID: 4655371171495164119}
   m_Father: {fileID: 6596337902762509990}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6759134400431484251
 GameObject:
@@ -3330,9 +3329,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2218156088947385162, guid: cb6e704e28f6a0042bfe137fd7aa2d36, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.578
+      objectReference: {fileID: 0}
     - target: {fileID: 4249787450957416892, guid: cb6e704e28f6a0042bfe137fd7aa2d36, type: 3}
       propertyPath: m_Name
       value: Complete XR Origin Set Up
+      objectReference: {fileID: 0}
+    - target: {fileID: 5390825236711556615, guid: cb6e704e28f6a0042bfe137fd7aa2d36, type: 3}
+      propertyPath: m_Radius
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5390825237702351248, guid: cb6e704e28f6a0042bfe137fd7aa2d36, type: 3}
+      propertyPath: m_Radius
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 7414508569172271138, guid: cb6e704e28f6a0042bfe137fd7aa2d36, type: 3}
       propertyPath: m_RootOrder
