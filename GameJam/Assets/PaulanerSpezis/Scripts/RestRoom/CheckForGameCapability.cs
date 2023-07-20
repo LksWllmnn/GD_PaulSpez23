@@ -5,8 +5,6 @@ public class CheckForGameCapability : Riddle
 {
     [SerializeField] StoryGimics m_StroyGimics;
     [SerializeField] TextMeshPro m_ScreenText;
-    string _lastEntered;
-    string _progress;
     bool _isSolved = false;
     bool _pizza = false;
     bool _energy = false;
@@ -23,33 +21,30 @@ public class CheckForGameCapability : Riddle
     {
         if(!_isSolved)
         {
-            if(other.name == "Pizza_Slice")
+            if(CheckIfCorrect(other.name))
             {
-                _pizza = true;
-                m_ScreenText.text = "What is that? ...Hmm Pizza";
-            } else if(other.name == "Radish")
-            {
-                _radish = true;
-                m_ScreenText.text = "ugh.. Radish!! Fuck of you chicken shit!! Take it out!";
-            } else if(other.name == "MofsterEnergy")
-            {
-                _energy = true;
-                m_ScreenText.text = "What is that? ...Hmm Energy...nice";
+                m_ScreenText.text = "1/2";
+                //play Audio
             }
+
+            if(other.name == "Radish")
 
             if(_energy && _pizza && !_radish)
             {
-                m_ScreenText.text = "Uh, nice one!";
+                m_ScreenText.text = "2/2";
                 Solved();
-            } else if (!_energy || !_pizza)
-            {
-                m_ScreenText.text = "sth is missing!";
             }
-            else if (_radish)
-            {
-                m_ScreenText.text = "take...it...out!";
-            }
-            m_ScreenText.text = _lastEntered + "" + _progress;
+        }
+    }
+
+    public bool CheckIfCorrect(string name)
+    {
+        switch (name)
+        {
+            case "Pizza_Slice": return true;
+            case "MofsterEnergy": return true;
+            default: return false;
+
         }
     }
 
