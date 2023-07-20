@@ -1,23 +1,20 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 public delegate void CallOpened();
 
-public class OpenDoor : MonoBehaviour
+public abstract class OpenDoor : MonoBehaviour
 {
-    [SerializeField] GameObject ?DoorPivot;
-    //[SerializeField] GameObject NextRoom;
-    bool rotateDoor = false;
-    bool isOpen = false;
     private float timerDuration = 2f;
-    private bool timerRunning = false;
+    bool timerRunning = false;
     public event CallOpened cO;
+
+    bool _opening = false;
+    bool _isOpen = false;
 
     public void Open()
     {
-        rotateDoor = true;
+        _opening = true;
         if (!timerRunning)
         {
             StartCoroutine(TimerCoroutine());
@@ -26,28 +23,24 @@ public class OpenDoor : MonoBehaviour
 
     public void StopOpen()
     {
-        rotateDoor = false;
-        isOpen = true;
-        cO();
-        //NextRoom.SetActive(true);
+        _opening = false;
+        _isOpen = true;
+        CallOpen();
     }
 
-
+    public void CallOpen()
+    {
+        cO();
+    }
 
     private void Update()
     {
-        OpenDoorAction();
+        if(_opening && !_isOpen) OpenDoorAction();
     }
 
-    protected virtual void OpenDoorAction()
-    {
-        if (rotateDoor && !isOpen)
-        {
-            DoorPivot.transform.Rotate(new Vector3(0, -90f * Time.deltaTime, 0), Space.World);
-        }
-    }
+    protected abstract void OpenDoorAction();
 
-    private IEnumerator TimerCoroutine()
+    protected IEnumerator TimerCoroutine()
     {
         timerRunning = true;
         yield return new WaitForSeconds(timerDuration);

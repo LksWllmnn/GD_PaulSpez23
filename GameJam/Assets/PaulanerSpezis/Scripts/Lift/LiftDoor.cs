@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArcadeGameDoorOut : OpenDoor
+public class LiftDoor : OpenDoor
 {
     protected override void OpenDoorAction()
     {
-        //Debug.Log("Do sth");
+        Debug.Log("Sth happens here");
     }
 }

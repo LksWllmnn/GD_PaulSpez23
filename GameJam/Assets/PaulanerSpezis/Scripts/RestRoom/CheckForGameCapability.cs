@@ -4,7 +4,6 @@ using UnityEngine;
 public class CheckForGameCapability : Riddle
 {
     [SerializeField] StoryGimics m_StroyGimics;
-    [SerializeField] GameObject CubeRiddle;
     [SerializeField] TextMeshPro m_ScreenText;
     string _lastEntered;
     string _progress;
@@ -40,7 +39,6 @@ public class CheckForGameCapability : Riddle
 
             if(_energy && _pizza && !_radish)
             {
-                CubeRiddle.SetActive(true);
                 m_ScreenText.text = "Uh, nice one!";
                 Solved();
             } else if (!_energy || !_pizza)
