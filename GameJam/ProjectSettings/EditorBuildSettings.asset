@@ -5,19 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/PaulanerSpezis/Scenes/Office.unity
     guid: bc3056f6a0bd3964a9f7fb52a0ebd09f
-  - enabled: 1
+  - enabled: 0
     path: Assets/PaulanerSpezis/Scenes/RestRoom.unity
     guid: 031c7d955e2f3244eb32e0976fc34b0d
-  - enabled: 1
+  - enabled: 0
     path: Assets/PaulanerSpezis/Scenes/InsideArcade.unity
     guid: 790feee6242704c408b547ecd914f5fa
-  - enabled: 1
+  - enabled: 0
     path: Assets/PaulanerSpezis/Scenes/RestRoom2.unity
     guid: e2cda05b5b2b2f549919b388f3a4ed94
-  - enabled: 1
+  - enabled: 0
     path: Assets/PaulanerSpezis/Scenes/Lift.unity
     guid: 023055eb9dc49a54fb0a29e96e18d748
   - enabled: 1

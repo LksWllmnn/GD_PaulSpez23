@@ -32,7 +32,7 @@ public class Plant : MonoBehaviour
             m_TextMeshPro.enabled = false;
             
             cW();
-            FlyTimer();
+            StartCoroutine(FlyTimer());
         }
     }
 

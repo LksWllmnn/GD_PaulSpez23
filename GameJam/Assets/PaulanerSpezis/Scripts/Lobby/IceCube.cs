@@ -21,7 +21,7 @@ public class IceCube : MonoBehaviour
             if (other.name == "plantcollider")
             {
                 other.gameObject.GetComponent<Plant>().AddHit();
-                Destroy(this.gameObject);
+                Destroy(gameObject);
             }
         }
     }
@@ -55,6 +55,10 @@ public class IceCube : MonoBehaviour
                 return true; 
             case "GamJamLobbyCup1":
                 return true;
+            case "Teller":
+                return true;
+            case "Direct Interactor":
+                return true;
             default: return false;
         }
     }
@@ -77,6 +81,9 @@ public class IceCube : MonoBehaviour
             case "BucketWall (8)": return false;
             case "BucketWall (9)": return false;
             case "waterDispencer": return true;
+            case "Teller":
+                return true;
+                
             default: return true;
         }
         
