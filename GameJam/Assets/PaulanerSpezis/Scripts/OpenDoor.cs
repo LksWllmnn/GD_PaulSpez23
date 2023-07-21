@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using UnityEngine;
 
@@ -38,7 +39,10 @@ public abstract class OpenDoor : MonoBehaviour
 
     private void Update()
     {
-        if(_opening && !_isOpen) OpenDoorAction();
+        if (_opening && !_isOpen)
+        {
+            OpenDoorAction();
+        }
     }
 
     protected abstract void OpenDoorAction();

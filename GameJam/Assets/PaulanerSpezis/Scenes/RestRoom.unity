@@ -860,7 +860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TeleportSound: {fileID: 1292852185}
-  m_ArcadeMachine: {fileID: 0}
+  m_ArcadeMachine: {fileID: 797638728}
 --- !u!82 &1292852185
 AudioSource:
   m_ObjectHideFlags: 0

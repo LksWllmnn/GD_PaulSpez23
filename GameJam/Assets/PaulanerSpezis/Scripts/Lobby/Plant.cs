@@ -47,7 +47,7 @@ public class Plant : MonoBehaviour
         }*/
         if (_flyMotion)
         {
-            transform.parent.Translate(new Vector3(0, 0, -8f * Time.deltaTime));
+            transform.parent.Translate(new Vector3(0, 0, -4f * Time.deltaTime));
         }
     }
 
@@ -61,9 +61,9 @@ public class Plant : MonoBehaviour
         
         yield return new WaitForSeconds(2f);
         m_Anim.SetTrigger("Watered 0");
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(8f);
         _flyMotion = true;
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(8f);
         _flyMotion = false;
     }
 
