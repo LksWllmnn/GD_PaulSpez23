@@ -19,6 +19,7 @@ public abstract class OpenDoor : MonoBehaviour
         {
             StartCoroutine(TimerCoroutine());
         }
+        PlayOpenSound();
     }
 
     public void StopOpen()
@@ -27,6 +28,8 @@ public abstract class OpenDoor : MonoBehaviour
         _isOpen = true;
         CallOpen();
     }
+
+    public abstract void PlayOpenSound();
 
     public void CallOpen()
     {

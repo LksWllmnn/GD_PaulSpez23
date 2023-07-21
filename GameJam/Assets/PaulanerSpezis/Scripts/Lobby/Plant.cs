@@ -13,12 +13,14 @@ public class Plant : MonoBehaviour
     [SerializeField] Animator m_Anim;
     bool _flyMotion = false;
 
+    [SerializeField] AudioSource m_AudioSource;
+
     bool done = true;
 
     private void Start()
     {
         m_TextMeshPro.text = "0";
-        //m_Anim.SetTrigger(0);
+        StartCoroutine(PlantMonolog());
     }
 
     public void AddHit()
@@ -63,5 +65,11 @@ public class Plant : MonoBehaviour
         _flyMotion = true;
         yield return new WaitForSeconds(6f);
         _flyMotion = false;
+    }
+
+    protected IEnumerator PlantMonolog()
+    {
+        yield return new WaitForSeconds(1f);
+        m_AudioSource.Play();
     }
 }

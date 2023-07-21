@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -5,12 +6,18 @@ public class CheckForGameCapability : Riddle
 {
     [SerializeField] StoryGimics m_StroyGimics;
     [SerializeField] TextMeshPro m_ScreenText;
+    [SerializeField] AudioSource m_AudioSource;
     bool _isSolved = false;
     bool _pizza = false;
     bool _energy = false;
     bool _radish = false;
 
     public override event CallSolved CS;
+
+    private void Start()
+    {
+        StartCoroutine(MachineMonologue());
+    }
 
     public override void Solved()
     {
@@ -63,5 +70,11 @@ public class CheckForGameCapability : Riddle
                 m_ScreenText.text = "Proof to me that you are a real Gamer!";
             }
         }
+    }
+
+    protected IEnumerator MachineMonologue()
+    {
+        yield return new WaitForSeconds(1f);
+        m_AudioSource.Play();
     }
 }

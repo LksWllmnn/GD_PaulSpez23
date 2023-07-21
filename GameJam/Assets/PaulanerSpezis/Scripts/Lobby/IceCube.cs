@@ -1,13 +1,17 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class IceCube : MonoBehaviour
 {
     public WaterPlant Riddle;
+    [SerializeField] AudioSource m_AudioSource;
 
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("Hit sth trigger: " + other.name);
+        if (checkAudioCollider(other.name))
+        {
+
+        }
         if (!checkCollider(other.name)) {
             Destroy(this.gameObject);
         } else
@@ -17,7 +21,7 @@ public class IceCube : MonoBehaviour
             if (other.name == "plantcollider")
             {
                 other.gameObject.GetComponent<Plant>().AddHit();
-                Destroy(this);
+                Destroy(this.gameObject);
             }
         }
     }
@@ -53,5 +57,28 @@ public class IceCube : MonoBehaviour
                 return true;
             default: return false;
         }
+    }
+
+    bool checkAudioCollider(string name)
+    {
+        switch(name)
+        {
+            case "shittyBucket": return true;
+            case "normalBucket": return true;
+            case "IceCube(Clone)": return false;
+            case "BucketWall": return false;
+            case "BucketWall (1)": return false;
+            case "BucketWall (2)": return false;
+            case "BucketWall (3)": return false;
+            case "BucketWall (4)": return false;
+            case "BucketWall (5)": return false;
+            case "BucketWall (6)": return false;
+            case "BucketWall (7)": return false;
+            case "BucketWall (8)": return false;
+            case "BucketWall (9)": return false;
+            case "waterDispencer": return true;
+            default: return true;
+        }
+        
     }
 }

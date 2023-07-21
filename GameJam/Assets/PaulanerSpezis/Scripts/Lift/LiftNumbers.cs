@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class LiftNumbers : Riddle
 {
     public override event CallSolved CS;
+
+    [SerializeField] AudioSource m_AudioSourceSolved;
+    [SerializeField] AudioSource m_AudioMonologue;
 
     [SerializeField] List<int> m_CorrectNumbers;
     [SerializeField] TMPro.TextMeshPro m_TextMeshPro;
@@ -17,6 +18,8 @@ public class LiftNumbers : Riddle
 
     [SerializeField] List<LiftAudio> m_LiftNumbers = new List<LiftAudio>(4);
     float _timeBetweenAudios = 1.0f;
+    float _timeBetweenSequenzes = 2.0f;
+    float _timeToStartAfterMonologue;
 
     private void Start()
     {
@@ -26,13 +29,16 @@ public class LiftNumbers : Riddle
             m_LiftNumbers[i].Position = i;
             m_LiftNumbers[i].Count = m_CorrectNumbers[i];
         }
-
-        StartPlayingAudio();
+        _timeToStartAfterMonologue = m_AudioMonologue.clip.length + 1f;
+        StartCoroutine(TaskMonologue());
+        StartCoroutine(StartTask());
     }
 
     public override void Solved()
     {
         CS();
+        m_AudioSourceSolved.Play();
+
     }
 
     public void AddNumber(int number)
@@ -96,21 +102,37 @@ public class LiftNumbers : Riddle
         switch (number)
         {
             case 0:
-                m_LiftNumbers[number + 1].playAudio();
                 yield return new WaitForSeconds(_timeBetweenAudios);
+                m_LiftNumbers[number + 1].playAudio();
+                
                 break;
             case 1:
-                m_LiftNumbers[number + 1].playAudio();
                 yield return new WaitForSeconds(_timeBetweenAudios);
+                m_LiftNumbers[number + 1].playAudio();
+                
                 break;
             case 2:
-                m_LiftNumbers[number + 1].playAudio();
                 yield return new WaitForSeconds(_timeBetweenAudios);
+                m_LiftNumbers[number + 1].playAudio();
+                
                 break;
             case 3:
+                yield return new WaitForSeconds(_timeBetweenSequenzes);
                 m_LiftNumbers[0].playAudio();
-                yield return new WaitForSeconds(_timeBetweenAudios);
+                
                 break;
         }
+    }
+
+    private IEnumerator TaskMonologue()
+    {
+        yield return new WaitForSeconds(1f);
+        m_AudioMonologue.Play();
+    }
+
+    private IEnumerator StartTask()
+    {
+        yield return new WaitForSeconds(_timeToStartAfterMonologue+1);
+        StartPlayingAudio();
     }
 }
