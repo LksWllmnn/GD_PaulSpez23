@@ -61,7 +61,7 @@ public class Plant : MonoBehaviour
         
         yield return new WaitForSeconds(2f);
         m_Anim.SetTrigger("Watered 0");
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(3f);
         _flyMotion = true;
         yield return new WaitForSeconds(8f);
         _flyMotion = false;
